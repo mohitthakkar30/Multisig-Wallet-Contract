@@ -14,8 +14,8 @@ contract AccessWallet is AccessControl {
     /**
      * @dev Contract constructor instantiates wallet interface and sets msg.sender to admin
      */
-    constructor(MyWallet wallet_, address[] memory _owners) AccessControl(_owners){
-        _walletInterface = MyWallet(wallet_);
+    constructor(MyWallet _wallet, address[] memory _owners) AccessControl(_owners){
+        _walletInterface = MyWallet(_wallet);
         admin = msg.sender;
     }
 
